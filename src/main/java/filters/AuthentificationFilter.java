@@ -24,7 +24,7 @@ public class AuthentificationFilter implements Filter
 		
 		HttpSession session = servletRequest.getSession();
 		
-		if (session.getAttribute("utilisateur") != null) 
+		if (session.getAttribute("loggedUser") != null) 
 		{
 			chain.doFilter(request, reponse);
 		}

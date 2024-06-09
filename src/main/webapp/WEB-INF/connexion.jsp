@@ -1,25 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<% final String APP_ROOT = request.getContextPath(); %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="<%= APP_ROOT %>/css/design.css">
-</head>
-<body>
-	<header>Gestion des utilisateurs</header>
-	<nav>
-		<ul>
-			<li><a href="<%= APP_ROOT %>">Accueil</a></li>
-			<li><a href="<%= APP_ROOT %>/list">Lister</a></li>
-			<li><a href="<%= APP_ROOT %>/add">Ajouter</a></li>
-		</ul>
-	</nav>
+<%@include file="inc/header.jsp" %>
 	<section>
-	<div class="alert alert-${ status ? 'success' : 'danger' }">
-		${ statusMessage }
-	</div>
+		<% 
+		if(request.getAttribute("status") != null)
+		{%>
+			<div class="alert alert-${ status ? 'success' : 'danger' }">
+				${ statusMessage }
+			</div><%
+		}
+		%>
 		<h1 id="titre-principal">Authentification</h1>
 		<form method="post" class="main">
 			<div class="formItem">

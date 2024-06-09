@@ -22,11 +22,14 @@ public class AuthentificationManager extends HttpServlet
 			case "/login":
 			{
 				getServletContext().getRequestDispatcher(VUE_CONNEXION).forward(request, response);
+				break;
 			}
-			default:
+			case "/logout":
+			{
 				LoginForm form = new LoginForm(request);
 				form.logout();
 				response.sendRedirect("login");
+			}
 		}
 	}
 		

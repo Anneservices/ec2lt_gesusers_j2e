@@ -34,7 +34,7 @@ public class LoginForm
 		if (loggedUser != null && loggedUser.getPassword().equals(password))
 		{
 			HttpSession session = request.getSession();
-			session.setAttribute("utilisateur", loggedUser);
+			session.setAttribute("loggedUser", loggedUser);
 			
 			return true;
 		}
